@@ -1,0 +1,17 @@
+
+Inicar el escenario con los siguientes scripts en orden:
+
+  0. Los scripts se encuentran en el directorio bin de la práctica. Situarse en ese directorio y ejecutar los scripts desde ahí.
+  1. ./pfinal_start.sh
+  2. ./pfinal_vcpe_vnf_config.sh
+  3. ./pfinal_vcpe_vyos.sh
+  4. Comprobar en host que tienen direccion ipv4, en caso de que no ejecutar en sus terminales dhconfig
+  5. ./pfinal_vcpe-1_qos.sh
+
+
+Probar QoS para tráfico de bajada
+  1. En hxx, ejecutar iperf -s -i 1
+  2. Acceder al router Vyos: sudo docker exec -it mn.dc1_vcpe-1-2-VyOS-1 /bin/bash
+  3. En Vyos, ejecutar: iperf -c dir_ip_hxx -b 15M -l 1400
+
+Para eliminar el escenario: ./pfinal_stop.sh
